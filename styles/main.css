@@ -1,16 +1,25 @@
+body {
+  background-color: bisque;
+}
+
 .page-body {
   margin-left: 20%;
   height: 80%;
   margin-right: 10%;
 }
 
-#home-page-title {
-  font-size: 50px;
+.page-title {
+  font-size: 35px;
   border-bottom: solid red 2px;
 }
 
+.article-text {
+  font-size: 20px;
+}
+
 .page-head {
-  font-family: Righteous;
+  font-family: Kablammo;
+  font-size: 50px;
   margin-left: 20px;
   margin-right: auto;
   margin-top: 0;
@@ -18,24 +27,23 @@
   color: #f1f1f1;
 }
 
-#title-favicon {
+.title-favicon {
   margin-top: 5px;
-  max-width: 30px;
-  display: inline-inline;
+  max-width: 60px;
+  display: inline;
   float: left;
 }
 
-#header {
+.header {
   padding-top: 25px;
   overflow: hidden;
   display: block;
   padding-left: 50px;
   padding-bottom: 10px;
-  padding-right: auto;
   background-color: #524c4c;
 }
 
-#navigation {
+.navigation {
   float: left;
   width: 15%;
   height: 80%;
@@ -55,43 +63,68 @@
   text-decoration: none;
   list-style-type: none;
   padding: 0;
+  font-size: 15px;
 }
 
 .active {
   color: white;
-  background-color: #209cee;
+  background-color: #fa5;
 }
 
 .menu-item:hover:not(.active) {
-  background-color: #209cee;
+  color: white;
+  background-color: #f80;
 }
 
 .copyright {
-  position: fixed;
+  position: relative;
   left: 0;
-  bottom: 0;
+  bottom: 2%;
   width: 100%;
   text-align: center;
 }
 
+@media (min-width: 2000px) {
+  .article-text {
+    font-size: 25px;
+  }
+  .menu-item {
+    font-size: 25px;
+  }
+  .page-title {
+    font-size: 50px;
+  }
+  .page-body {
+    margin-right: 30%;
+  }
+  .page-head {
+    font-size: 65px;
+  }
+  .title-favicon {
+    max-width: 75px;
+  }
+}
+
+footer {
+  margin-top: 100px;
+}
+
 @media (max-width: 600px) {
-  #navigation {
+  .navigation {
     width: 100%;
     height: auto;
     text-align: center;
   }
 
   .page-head {
-    font-family: Righteous;
     margin-left: 5px;
-    margin-right: auto;
     display: inline;
     font-size: 20px;
   }
 
-  #title-favicon {
+  .title-favicon {
     margin-top: 3px;
-    max-width: 20px;
+    max-width: 23px;
     display: inline;
     float: left;
   }
@@ -99,10 +132,17 @@
   .page-body {
     margin-left: 5%;
     padding-top: 30%;
+    margin-right: 5%;
   }
 
-  #home-page-title {
+  .page-title {
     font-size: 35px;
+  }
+  .menu-item {
+    font-size: 15px;
+  }
+  .article-text {
+    font-size: 15px;
   }
 }
 
@@ -111,7 +151,7 @@
     margin-left: 5%;
     padding-top: 40%;
   }
-  #home-page-title {
+  .page-title {
     font-size: 25px;
   }
 }
@@ -122,7 +162,7 @@
     padding-top: 40%;
   }
 
-  #home-page-title {
+  .page-title {
     font-size: 20px;
   }
 }
