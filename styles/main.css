@@ -1,6 +1,9 @@
+.page-body {
+  margin-left: 20%;
+}
+
 .page-head {
   font-family: Caprasimo;
-  margin-top: auto;
   margin-left: 20px;
   margin-right: auto;
   display: inline;
@@ -10,26 +13,27 @@
   max-width: 30px;
   display: inline;
   float: left;
-  margin-left: 50px;
 }
 
 #header {
-  margin-top: 25px;
+  padding-top: 25px;
   overflow: hidden;
   display: block;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  padding-right: auto;
 }
 
 #navigation {
-  list-style-type: none;
-  font-family: Lora;
-  float: right;
-  padding-left: 0;
-  margin-top: auto;
-  margin-right: 50px;
-}
-
-.menu {
   float: left;
+  width: 15%;
+  height: 80%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: fixed;
+  overflow: auto;
+  background-color: #f1f1f1;
 }
 
 .menu-item {
@@ -37,9 +41,58 @@
   color: black;
   text-align: center;
   padding: 15px 30px;
+  margin: 10px;
   text-decoration: none;
+  list-style-type: none;
+  padding: 0;
 }
 
-.menu-item:hover {
-  color: gray;
+.active {
+  color: white;
+  background-color: #209cee;
+}
+
+.menu-item:hover:not(.active) {
+  background-color: #209cee;
+}
+
+@media (max-width: 600px) {
+  #navigation {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .page-head {
+    font-family: Caprasimo;
+    margin-left: 20px;
+    margin-right: auto;
+    display: inline;
+    font-size: 20px;
+  }
+
+  #title-favicon {
+    max-width: 20px;
+    display: inline;
+    float: left;
+  }
+
+  .page-body {
+    margin-left: 5%;
+    padding-top: 30%;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-body {
+    margin-left: 5%;
+    padding-top: 40%;
+  }
+}
+
+@media (max-width: 320px) {
+  .page-body {
+    margin-left: 0;
+    padding-top: 40%;
+  }
 }
