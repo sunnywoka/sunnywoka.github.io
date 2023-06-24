@@ -1,18 +1,27 @@
 .page-body {
   margin-left: 20%;
   height: 80%;
+  margin-right: 10%;
+}
+
+#home-page-title {
+  font-size: 50px;
+  border-bottom: solid red 2px;
 }
 
 .page-head {
-  font-family: Caprasimo;
+  font-family: Righteous;
   margin-left: 20px;
   margin-right: auto;
-  display: inline;
+  margin-top: 0;
+  display: inline-block;
+  color: #f1f1f1;
 }
 
 #title-favicon {
+  margin-top: 5px;
   max-width: 30px;
-  display: inline;
+  display: inline-inline;
   float: left;
 }
 
@@ -23,6 +32,7 @@
   padding-left: 50px;
   padding-bottom: 10px;
   padding-right: auto;
+  background-color: #524c4c;
 }
 
 #navigation {
@@ -57,7 +67,10 @@
 }
 
 .copyright {
-  padding-bottom: 5%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
 }
 
@@ -69,14 +82,15 @@
   }
 
   .page-head {
-    font-family: Caprasimo;
-    margin-left: 20px;
+    font-family: Righteous;
+    margin-left: 5px;
     margin-right: auto;
     display: inline;
     font-size: 20px;
   }
 
   #title-favicon {
+    margin-top: 3px;
     max-width: 20px;
     display: inline;
     float: left;
@@ -86,12 +100,19 @@
     margin-left: 5%;
     padding-top: 30%;
   }
+
+  #home-page-title {
+    font-size: 35px;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .page-body {
     margin-left: 5%;
     padding-top: 40%;
+  }
+  #home-page-title {
+    font-size: 25px;
   }
 }
 
@@ -99,5 +120,9 @@
   .page-body {
     margin-left: 0;
     padding-top: 40%;
+  }
+
+  #home-page-title {
+    font-size: 20px;
   }
 }
