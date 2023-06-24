@@ -1,0 +1,45 @@
+.page-head {
+  font-family: Caprasimo;
+  margin-top: auto;
+  margin-left: 20px;
+  margin-right: auto;
+  display: inline;
+}
+
+#title-favicon {
+  max-width: 30px;
+  display: inline;
+  float: left;
+  margin-left: 50px;
+}
+
+#header {
+  margin-top: 25px;
+  overflow: hidden;
+  display: block;
+}
+
+#navigation {
+  list-style-type: none;
+  font-family: Lora;
+  float: right;
+  padding-left: 0;
+  margin-top: auto;
+  margin-right: 50px;
+}
+
+.menu {
+  float: left;
+}
+
+.menu-item {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  color: gray;
+}
