@@ -24,7 +24,7 @@
     />
     <link rel="manifest" href="../favicon_io/site.webmanifest" />
     <link
-      href="https://fonts.googleapis.com/css?family=Righteous"
+      href="https://fonts.googleapis.com/css?family=Kablammo"
       rel="stylesheet"
       type="text/css"
     />
@@ -51,24 +51,109 @@
         <li><a class="menu-item active" href="tech-blog.html">Tech Blog</a></li>
         <li><a class="menu-item" href="core-blog.html">Core Blog</a></li>
         <li>
-          <a class="menu-item" href="#">The Story of Te Houtaewa</a>
+          <a class="menu-item" href="te-houtaewa-template.html"
+            >The Story of Te Houtaewa</a
+          >
         </li>
       </ul>
     </nav>
 
     <article class="page-body">
-      <h1>
+      <h1 class="page-title">
         What are the differences between relative, absolute, and fixed
         positioning?
       </h1>
-      <h2>
-        <em></em>
-      </h2>
-      <h3>23 JUNE 2023</h3>
+      <p>The <code>'position'</code> property is used for an element to specify its type of
+        position method. Normally we have five different position values:
+        <ul>
+          <li><p class="li-less-margin"><code>static</code></p></li>
+          <li><p class="li-less-margin"><code>relative</code></p></li>
+          <li><p class="li-less-margin"><code>fixed</code></p></li>
+          <li><p class="li-less-margin"><code>absolute</code></p></li>
+          <li><p class="li-less-margin"><code>sticky</code></p></li>
+        </ul>
+      </p>
+      <p>Today, we will introduce the three most common used value: <code>relative</code>, <code>fixed</code> and <code>absolute</code>.</p>
+      <img
+        src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*3nHXvVEEbQziTats5DlZOA.png"
+        alt="positionning picture"
+        width="685"
+        height="227"
+        id="positionning-picture"
+      />
+      
+      <h2>relative</h2>
+      <p>The definition of <code>relative</code> value is: an element with <code>position: relative;</code> is positioned relative to its normal position. In other words, when you move a <code>position: relative;</code> element, the change of position will rely on the original position of the element and not effect the layout of the page.</p>
+      <p>There is an example of <code>position: relative;</code> , its position is relative to the position of this paragraph, like a sticker on the notebook!</p>
+      <div class="relative">I am <code>'position: relative;'</code>, my position depends on where the blog writer put me in.</div>
+      <p>Here is the example code how I set the <code>relative</code> position: </p>
+      <pre>
 
-      <p></p>
-      <p></p>
-      <p></p>
+        style {        
+          .relative {
+            position: relative;
+            width: 300px;
+            height: 60px;
+            border: 3px solid #81e448;
+            text-align: center;
+            font-family: Lora;
+            font-size: 15px;
+            background-color: #f1f1f1;
+          }
+        } 
+
+        &lt;div class="relative">I have 'position: relative;'!&lt;/div>
+      </pre>
+      <h2>fixed</h2>
+      <p>The definition of <code>fixed</code> value is: an element with <code>position: fixed;</code> is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled.</p>
+      <p>There is an example of <code>position: fixed;</code> on the right side of this web page: the div element with purple border sticks to the middle right of the page, just like a chewing gum on your device screen! No matter what you do, whether you change the size of the browser or scroll the page, it remains in that position!</p>
+      <p>Here is the example code how I set the <code>fixed</code> position: </p>
+      <pre>
+
+        style {
+          .fixed {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            width: 300px;
+            height: 30px;
+            border: 3px solid #b3468e;
+            text-align: center;
+            font-family: Lora;
+            font-size: 15px;
+            background-color: #f1f1f1;
+          }
+        } 
+
+        &lt;div class="fixed">I have 'position: fixed;'!&lt;/div>
+      </pre>
+      <h2>absolute</h2>
+      <p>The definition of <code>absolute</code> value is: an element with <code>position: absolute;</code> is positioned relative to the nearest positioned ancestor. If an absolute positioned element has no positioned ancestors, it will use the html body nd move along with page scrolling.</p>
+      <p>There is an example of <code>position: absolute;</code> beside the list of position value, it is another chewing gum on this web page. It will stick there whether you scroll the page, but it will change the position little bit if you change the screen size. I set it,  because it may cover other element in different screens.</p>
+      <p>Here is the example code how I set the <code>absolute</code> position: </p>
+      <pre>
+
+        style {
+          .fixed {
+            position: absolute;
+            top: 35%;
+            right: 20%;
+            width: 300px;
+            height: 50px;
+            border: 3px solid #342672;
+            text-align: center;
+            font-family: Lora;
+            font-size: 15px;
+            background-color: #f1f1f1;
+          }
+        } 
+
+        &lt;div class="absolute">I have 'position: absolute;'!&lt;/div>
+      </pre>
+      
+      <div class="absolute">I am <code>'position: absolute;'</code>, my position depends on this web page!</div>
+      <div class="fixed">I am <code>'position: fixed;'</code>, my position depends on your screen!</div>
+      <p class="break-line">23 JUNE 2023</p>
     </article>
     <footer>
       <div class="copyright">
