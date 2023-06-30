@@ -10,6 +10,7 @@ pre {
   color: white;
   background-color: black;
   font-size: 20px;
+  overflow: auto;
 }
 
 h2 {
