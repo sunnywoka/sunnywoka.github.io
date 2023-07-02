@@ -1,3 +1,7 @@
+img {
+  width: 80%;
+  height: auto;
+}
 code {
   font-family: Consolas;
   color: rgb(209, 75, 75);
@@ -14,6 +18,11 @@ pre {
 }
 
 h2 {
+  margin-top: 8%;
+  font-family: Lora;
+}
+h3 {
+  margin-top: 4%;
   font-family: Lora;
 }
 
@@ -68,9 +77,11 @@ h2 {
 }
 
 #positionning-picture {
-  width: 514px;
-  object-fit: cover;
-  object-position: 100%;
+  width: 100%;
+  height: auto;
+  clip-path: inset(0 0 0 25%);
+  position: relative;
+  left: -25%;
 }
 
 body {

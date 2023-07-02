@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Fundamentals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../favicon_io/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kablammo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <img
+        class="title-favicon"
+        src="../favicon_io/android-chrome-192x192.png"
+        alt="Yuekai's favicon"
+      />
+      <h1 class="page-head">Yuekai's Blog</h1>
+    </div>
+    <nav>
+      <ul class="navigation">
+        <li><a class="menu-item" href="../index.html">Home</a></li>
+        <li><a class="menu-item" href="about-myself.html">About</a></li>
+        <li><a class="menu-item active" href="tech-blog.html">Tech Blog</a></li>
+        <li><a class="menu-item" href="core-blog.html">Core Blog</a></li>
+        <li>
+          <a class="menu-item" href="te-houtaewa-template.html"
+            >The Story of Te Houtaewa</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <article class="page-body">
+      <h1 class="page-title">My learning journey of JavaScript fundamentals</h1>
+      <h2>What is JavaScript and what is its relationship to HTML and CSS?</h2>
+      <p>
+        In web development, HTML defines the structure of your content, CSS
+        determines the style and layout, and JavaScript makes the content
+        interactive. None of them are dispensable.
+      </p>
+      <p>
+        Let's consider that building a good-looking and fully functional website
+        is like building your dream car. The first step is to build the frame of
+        the car, and your friend, Mr. HTML, helps you with it. Then, you want
+        your dream car to be unique! Your other friend, Ms. CSS, adds color with
+        hex digits to the car's frame, designs special big fancy rims, new-tech
+        LED headlights, and more. Cool! Your car looks awesome!
+      </p>
+      <p>
+        You decide to show off your car, but wait, there's no engine! No brakes!
+        No transmission! All of the functional parts are missing. Right now,
+        it's just a good-looking car frame! Luckily, Mr. HTML and Ms. CSS
+        introduce their friend, Mr. JavaScript, who comes over to help you add
+        all the needed functional parts to your car. Phew! The car is finally
+        done, and it's time to show off!
+      </p>
+      <img
+        src="https://www.onely.com/wp-content/uploads/blog/2020/Ultimate_Guide_JS_SEO_2020_Edition/003-chapter1-html-css-js-chart.jpg"
+        alt="javascript and car analogy picture"
+      />
+      <h2>Control flow and Loops</h2>
+      <p>
+        Control flow is how the computer runs the code from top to bottom in
+        JavaScript. It nomally starts from the first line and ends at the last
+        line. However, some statement can changes the control flow, such as
+        conditionals, loops and functions.
+      </p>
+      <p>There is a interesting programmer joke:</p>
+      <p>
+        Wife: After you're done with work, make sure to buy a dozen of eggs. And
+        if they have bread, go ahead and buy one.
+      </p>
+      <p>Husband: Alright.</p>
+      <p>Later that night...</p>
+      <p>Wife: Why did you only buy one egg?</p>
+      <p>Husband: Well, I spotted they having bread, so...</p>
+      <p>
+        Lol! You may not understand why this husband does not follow his wife's
+        instructions. First, let's find out what the conditional statement is.
+        Conditional statements is used for determining whether or not pieces of
+        code can run. In JavaScript, we have <code>if</code>,
+        <code>else if</code>, <code>else</code> and
+        <code>switch</code> statements.
+      </p>
+      <h3><code>if</code> statement</h3>
+      <p>
+        Let's putting the wife's instructions with <code>if</code> statement,
+        you can see that:
+      </p>
+      <pre>
+
+        let buyEggs = 12;
+        let haveBread = true;
+
+        if(haveBread){
+          buyEggs = 1;
+        }
+      </pre>
+      <p>
+        Wow! After this <code>if</code> statement, the <code>buyEggs</code> will
+        return to 1 instead of 12. Because the condition
+        <code>haveBread</code> is true and is used to specify execution for a
+        block of code <code>buyEggs = 1;</code>. Now you may understand why the
+        husband will only buy one egg. He must be a programmer!
+      </p>
+      <h3><code>if else</code> statement</h3>
+      <p>
+        Let's consider other conditional statements with the wife's different
+        instructions for her programmer husband.
+      </p>
+      <p>
+        Wife: go to the store and buy a dozen of eggs. If they have bread, buy
+        one. If they do not have bread, buy extra a dozen of eggs.
+      </p>
+      <p>Following wife's instructions, here is the code:</p>
+      <pre>
+
+        let buyEggs = 12;
+        let haveBread = true;
+
+        if(haveBread){
+          buyEggs = 1;
+        }else{
+          buyEggs += 12;
+        }
+      </pre>
+      <p>
+        The husband will buy either 1 or 24 eggs based on whether the store has
+        bread.
+      </p>
+      <h3><code>else if</code> statement and <code>switch</code> statement</h3>
+      <p>
+        The <code>else if</code> statement and the <code>switch</code> statement
+        are similar in some ways, but they have distinct differences. The key
+        distinction is that the <code>else if</code> statement allows for
+        specifying a new condition to test if the previous condition evaluates
+        to false. On the other hand, the <code>switch</code> statement is used
+        to determine the matching expression among several possibilities.
+      </p>
+      <p>
+        let's check wife's new instruction: go to the store and buy a dozen of
+        eggs. If they have bread, buy one. If they have apples, buy five. If
+        they do not have any, buy extra a dozen of eggs.
+      </p>
+      <p>Here is the code with <code>else if</code> statement:</p>
+      <pre>
+
+        let buyEggs = 12;
+        let haveBread = true;
+        let haveApple = ture;
+
+        if(haveBread){
+          buyEggs = 1;
+        }else if(haveApple){
+          buyEggs = 5;
+        }else{
+          buyEggs += 12;
+        }
+      </pre>
+      <p>Here is the code with <code>switch</code> statement:</p>
+      <pre>
+
+        let buyEggs = 12;
+        let haveBread = true;
+        let haveApple = ture;
+
+        switch(condision){
+          case haveBread:
+            buyEggs =  1;
+            break;
+          case haveApple:
+            buyEggs =  5;
+            break;
+          default:
+            buyEggs += 12;
+        }
+      </pre>
+      <p>
+        The husband will buy either 1, 5 or 24 eggs based on what he seeing in
+        the store. What a great husband!
+      </p>
+      <h3>Loops</h3>
+      <p>
+        Loops are one of the important control flows in JavaScript and can
+        execute a block of cose a number of a times. It is similar to repeating
+        a simple task for many times in the life. For example, you decide to
+        serve 20 beautiful sunny side up eggs for your guests and you only have
+        one pan, so you have to repeat the procedures: cracking the egg,
+        pan-frying it, and serving it until you feed all the guests.
+      </p>
+      <p>If we put this example into JavaScript, the code will be liked:</p>
+      <pre>
+
+        for(let i = 0; i < 20; i++){
+          text += egg[i] + " is done!" + &lt;br>;
+        }
+      </pre>
+      <p>
+        The code above is using the <code>for</code> loops. There are threee
+        expressions in side the parentheses:
+      </p>
+      <ul>
+        <li>
+          <p>
+            Expression 1: <code>let i = 0;</code> is executed only one time
+            before the execution of the code block. It likes a note to remind
+            that you should start to cook the egg. But be careful, the computer
+            program counts index starting from 0.
+          </p>
+        </li>
+        <li>
+          <p>
+            Expression 2: <code>i < 20;</code> definds the condition for
+            executing the code block. It is an another note to remind you how
+            many eggs you should cook.
+          </p>
+        </li>
+        <li>
+          <p>
+            Expression 3: <code>i++</code> is executed every time after the code
+            block has been executed. It is a counter to count how many eggs have
+            been cooked.
+          </p>
+        </li>
+      </ul>
+      <p>We have anothe way <code>while</code> to execute the loops.</p>
+      <pre>
+
+        let i = 0;
+        while (i < 20){
+          text += egg[i] + " is done!" + &lt;br>;
+          i++;
+        }
+      </pre>
+      <p>
+        The code in <code>while</code> loops will run over and over again until
+        the variable <code>i</code> equals to 20. The <code>i</code> is a
+        counter to remind you how many eggs have been cooked!
+      </p>
+      <h2>What is the DOM? How do we interact with it?</h2>
+      <p>
+        The DOM is from abbreviation of Document Object Model, a powerful tool
+        and a programming interface for web documents. The programmers can use
+        it to represent the web page so that programs can change the document
+        structure, style and content.
+      </p>
+      <p>The HTML DOM is constructed as a tree of Objects:</p>
+      <img
+        src="https://www.w3schools.com/js/pic_htmltree.gif"
+        alt="The HTML DOM picture"
+      />
+      <p>
+        The reason why we should use DOM representation is because it allows us
+        to manipulate the web page, and it can be modified with a scriping
+        language such as JavaScript. For example, we can change the content of
+        an element with an id:
+      </p>
+
+      <pre>
+
+        &lt;html>
+          &lt;body>
+            &lt;p id = "example">&lt;/p>
+            &lt;script>
+              document.getElementById("examaple").innerHTML = "Hello!";
+            &lt;/script>
+          &lt;/body>
+        &lt;/html>
+      </pre>
+      <p>
+        Also, we can use many the DOM specified methods, such as
+        <code>querySelector</code>, <code>getElementById</code>,
+        <code>addEventListener()</code> and <code>createElement()</code> etc.
+        The DOM is our useful tool in our learning journey!
+      </p>
+
+      <h2>The difference between accessing data from arrays and objects.</h2>
+      <h3>Objects</h3>
+      <p>
+        What are objects in JavaScript? They are mutable data structure in
+        JavaScript to represent a thing, and it can be anything: a car, a
+        person, a bird etc. We can store the data in key value pair. The key is
+        itetable and can be anything. Here is the code how to create an object:
+      </p>
+      <pre>
+
+        const person = {
+          name: 'Yuekai Wu'
+          age: '27'
+          gender: 'male'
+        }
+      </pre>
+      <p>
+        The way to access the value of the object is easy, we can either a dot
+        operator followed by key name <code>person.name</code> or a square
+        bracket along with key in string format <code>person['name']</code>.
+      </p>
+      <p>To modify the value to an object:</p>
+      <pre>
+
+        person.age = 28;
+        //returns 28
+      </pre>
+      <p>To add a value to an object:</p>
+      <pre>
+
+        person.hobbies = 'Playing video game';
+      </pre>
+      <p>To delete a value from an object:</p>
+      <pre>
+
+        delete person.age;
+      </pre>
+      <h3>Arrays</h3>
+      <p>
+        Arrays are a kind of objects in JavaScript. They store the data in an
+        ordered collection in which the data can be accessed using a numerical
+        index. It is the major difference to the objects. They are also mutable
+        and data can be modified at any index. However, we need to be careful
+        that the indexes of arrays are zero based, meaning that the first item
+        is stored in zero index, the second item at first index and so on. It is
+        so different from our brain! Here is the code how to create an array:
+      </p>
+      <pre>
+
+               //index [0][1][2][3][4][5]
+        const number = [1, 2, 3, 4, 5, 6];
+      </pre>
+      <p>To modufy the value of index '1' to an array:</p>
+      <pre>
+
+         number[1] = 10;
+         //returns 10
+      </pre>
+      <p>To add a value to the front an array:</p>
+      <pre>
+
+        number.unshift(0);
+      </pre>
+      <p>To add a value to the end an array:</p>
+      <pre>
+
+        number.push(7);
+      </pre>
+      <p>To remove the value from an array:</p>
+      <pre>
+
+        delete number[3];
+        //returns [1, 2, 3, undefined, 5, 6]
+      </pre>
+      <p>
+        Be careful that removing the element form the array by
+        <code>delete</code>, this method will replace the value with undefined
+        instead of delete the index.
+      </p>
+      <h3>Conclusion</h3>
+      <p>
+        If you want to store the data in oder or in a sequence, use arrays.
+        Otherwise, just uss objects for everything else.
+      </p>
+      <h2>What are functions? Why are they helpful?</h2>
+      <p>
+        A JavaScript function is a block of code designed to perform a
+        particular task. To achieve this part, we need to declare a funtion:
+      </p>
+      <pre>
+
+        function myAddingFunction(num1, num2){
+          return num1 + num2;
+        }
+      </pre>
+      <p>
+        The code above is defined with the <code>function</code> keyword and
+        followed by a name <code>myAddingFunction</code>. Also, the followed
+        parentheses include the parameters <code>num1</code> and
+        <code>num2</code>. The code <code>return num1 + num2;</code> to be
+        executed is place inside the curly brackets by the function.
+      </p>
+      <p>
+        You may wonder that why the function has been declared, but there is
+        nothing on the screen. It is simple, the function is only executed when
+        you call it! How to call it? Let's check the code:
+      </p>
+      <pre>
+
+        let number = myAddingFunction(65, 32);
+        //return 97
+
+        number = myAddingFunction(25, 32);
+        //return 57
+      </pre>
+      <p>
+        You can see that I just change the value of a parameter, and the element
+        <code>number</code> will return to different value after it calls the
+        function. The code in function will perform the adding task for
+        <code>number</code>.
+      </p>
+      <p>
+        Let's consider your washing machine. With it, you don't have to do much.
+        Just put your clothes in and press the start button. The washing machine
+        will take care of washing the clothes for you. Functions, once declared,
+        can be called at any time and from anywhere you need them. They serve as
+        a valuable tool that can save both your work and your life!
+      </p>
+
+      <p class="break-line">30 JUNE 2023</p>
+    </article>
+    <footer>
+      <div class="copyright">
+        © 2023 Copyright by Yuekai Wu. All Rights Reserved.
+      </div>
+    </footer>
+
+    <!-- this is a comment. -->
+  </body>
+</html>
