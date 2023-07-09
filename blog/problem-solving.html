@@ -60,8 +60,215 @@
 
     <article class="page-body">
       <h1 class="page-title">My learning journey of Problem Solving</h1>
-      <h2></h2>
+      <h2>Damn! I was blocked on a simple problem</h2>
+      <p>
+        I stuck in question 7 'STRETCH MATERIAL' in the
+        <code>4-gradebook</code> challenge for nearly an hour. The question
+        asked me to complete a function which takes 3 parameters:
+        <code>gradebook</code>(it is an empty object), <code>students</code>(it
+        is an array) and <code>scores</code>(it is an array). This was my first
+        answer:
+      </p>
+      <pre>
 
+        function enterScores(gradebook, students, scores) {
+          for (let i = 0; i < students[i]; i++) {
+            gradebook[students[i]] = {}
+          }
+          for (let i = 0; i < students[i]; i++) {
+            gradebook[students[i]]['testScores'] = scores[i]
+          }
+        }
+      </pre>
+      <p>
+        If you are good with details and have deep understanding of for loop, I
+        think you have already figured out where the problem is, LOL. When I ran
+        the test in the terminal, it returned the error message:
+        <code>'TypeError: Cannot read properties of undefined'</code> with an
+        arrow pointing to the position under the code
+        <code>['testScores']</code> in the second loop. I searched for the error
+        message on Google, and there were many examples explaining how to solve
+        this issue. However, none of them were the same or similar to my code. I
+        believe the problem lies in the incorrect syntax of the code on this
+        line:
+      </p>
+      <pre>
+
+        gradebook[students[i]]['testScores'] = scores[i]
+      </pre>
+      <p>I tried other syntaxes of this code:</p>
+      <pre>
+
+        gradebook.students[i].['testScores'] = scores[i]
+      </pre>
+      <pre>
+
+        gradebook.students[i].testScores. = scores[i]
+      </pre>
+      <p>
+        Yup, none of them could solve the problem. I was stuck in this rabbit
+        hole. Then, I took a break and decided to use the rubber ducky method to
+        review my solution and the code. The first time I talked to the duck, I
+        realized that the error was not in this code, and the problem should be
+        somewhere else. I wrote console.log in each for loop and read the logs
+        in the console. Finally, I found the silly mistake inside the conditions
+        in the for loop. The condition <code>i < students[i]</code> was
+        incorrect and should be <code>i < students.length</code>. Here is the
+        correct anwser:
+      </p>
+      <pre>
+
+        function enterScores(gradebook, students, scores) {
+          for (let i = 0; i < students.length; i++) {
+            gradebook[students[i]] = {}
+          }
+          for (let i = 0; i < students.length; i++) {
+            gradebook[students[i]]['testScores'] = scores[i]
+          }
+        }
+      </pre>
+      <p>
+        After solving this problem, I did feel very sheepish for making such a
+        silly mistake. However, on the other hand, I was proud of myself for
+        trying new and easier problem-solving techniques to address the issue. I
+        also learned that I should try different techniques to solve a problem
+        instead of relying on just one approach. Moreover, I realized the
+        importance of taking a break and coming back to the problem with a fresh
+        perspective.
+      </p>
+      <h2>Yeah! I elegantly solved a problem</h2>
+      <p>
+        The first time I felt I elegantly solved a problem was in the
+        <code>3-super-fizzbuzz</code> challenge. The challenge required writing
+        two functions: one that would return the number passed to it, but if the
+        number was divisible by <code>15</code>, it would return the string
+        <code>FizzBuzz</code>; if the number was divisible by <code>5</code>, it
+        would return the string <code>Buzz</code>; and if the number was
+        divisible by <code>3</code>, it would return the string
+        <code>Fizz</code>. The other function would take an array of numbers as
+        input, loop over the array, and return a new array applying the fizzbuzz
+        rules.
+      </p>
+      <p>
+        To solve this problem, I used the rubber ducky method, talking myself
+        through what I needed to do. For the first function, since there were
+        four conditions, I decided to use an
+        <code>if - else if - else</code> statement to implement it. For the
+        second function, I used a for loop to iterate over the numbers in the
+        array and called the first function to apply the fizzbuzz rules. Then, I
+        wrote pseudocode to demonstrate my plan:
+      </p>
+      <pre>
+
+        //function one
+        //function with a number parameter
+        //if statement: the number is dicisible by 15, return the string FizzBuzz
+        //else if statement: the number is dicisible by 5, return the string Buzz
+        //else if statement: the number is dicisible by 3, return the string Fizz
+        //else statement: just return the number parameter
+
+        //function two
+        //function with an array of numbers
+        //declare an empty array
+        //for statement
+        //call function one with a parameter of the number in the array
+        //add the returned number into the empty array
+        //return the new array
+      </pre>
+      <p>
+        Using these two methods, generating a plan and organising the solution
+        before writing actual code, felt like a game-changer. It made the
+        programming process feel easier and more manageable. I learned that
+        early planning and organising ideas and solutions can save a lot of work
+        and make the entire task more effective. It's a valuable lesson in terms
+        of improving productivity and efficiency in programming.
+      </p>
+      <h2>How do I feel using the problem-solving techniques or processes?</h2>
+      <ul>
+        <li>
+          <h3>Pseudocode:</h3>
+          <p>
+            It is one of the best technique to improve productivity and
+            efficiency in programming. I think it will be great to use this
+            method before writing the codes.
+          </p>
+        </li>
+        <li>
+          <h3>Rubber ducky method:</h3>
+          <p>
+            It is another good method to generating a plan and organising the
+            ideas before writing actual code. It looks like a bit nonsense, but
+            it also a great method to improve the ability of neuroplasticity of
+            brain.
+          </p>
+        </li>
+        <li>
+          <h3>Reading error messages:</h3>
+          <p>
+            This method can be useful in detecting various errors, such as
+            misspellings, missing punctuation, and incorrect syntax. While error
+            messages like
+            <code>TypeError: Cannot read properties of undefined</code> can
+            provide hints about the location of the error, it is still necessary
+            to identify and correct the mistakes.
+          </p>
+        </li>
+        <li>
+          <h3>Console.logging:</h3>
+          <p>
+            It is a simple and effective method for dealing with problems. It
+            can provide information about function returns, check if an object
+            is empty, and determine the index of an array, among other things.
+            It is a clear and straightforward approach to debugging a program.
+          </p>
+        </li>
+        <li>
+          <h3>Googling and Trying something:</h3>
+          <p>
+            These two methods can be either useful or useless. Technical sites
+            like MDN and W3Schools can provide definitions and examples for my
+            search. However, the examples may be too simplistic to apply to my
+            program. Additionally, websites like Stack Overflow may offer
+            solutions that rely on different system environments, tech setups,
+            or programming language versions, which can further complicate the
+            problem. Also, tring something without clues may make the problem
+            more puzzling.
+          </p>
+        </li>
+        <li>
+          <h3>Asking peers or coaches for help:</h3>
+          <p>
+            I have not yet sought help from peers or coaches, but it remains the
+            best method to solve the problem. There's no need to feel
+            embarrassed about it. Also, seeking help can improve connections
+            within the group.
+          </p>
+        </li>
+        <li>
+          <h3>Improving your process with reflection:</h3>
+          <p>
+            Reflecting on mistakes and problems can help the brain memorize the
+            solutions. It can also leave a strong impression, enabling the brain
+            to quickly recall the information when faced with the same or
+            similar problem.
+          </p>
+        </li>
+      </ul>
+      <h2>What can I try differently when I was reluctant to ask for help?</h2>
+      <p>
+        I haven't asked for help in the foundation course yet for two reasons.
+        Firstly, the most challenging questions have already been asked and
+        solved in Discord channel, so I have been observing and learning from
+        those discussions. Secondly, I tend to prefer seeking help towards the
+        end, after I have exhausted all possible methods on my own. In the case
+        of question 7 'STRETCH MATERIAL' in the
+        <code>4-gradebook</code> challenge, I actually identified the error just
+        before deciding to ask for help in the Discord channel. Since it was an
+        individual challenge, I felt it was acceptable to hesitate in seeking
+        assistance. However, I recognise the need to change this approach and be
+        more proactive in asking for help in the future, especially when working
+        on larger group projects, as it can be more effective.
+      </p>
       <p class="break-line">08 JULY 2023</p>
     </article>
     <footer>
