@@ -1,4 +1,4 @@
-# Yuekai's Profolio and Blog
+# Yuekai's Portfolio and Blog
 
 Hi! I'm Yuekai, a dynamic full-stack web developer with a deep-seated passion for problem-solving and a knack for seamless team collaboration. I thrive in fast-paced, challenging environments and eagerly anticipate the next exciting project.
 
